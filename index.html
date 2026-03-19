@@ -444,7 +444,7 @@
     const img = document.createElement('img');
     img.src = item.src;
     img.alt = item.label;
-    img.loading = 'lazy';
+    img.loading = 'eager';
     wrap.appendChild(img);
     track.appendChild(wrap);
   });
