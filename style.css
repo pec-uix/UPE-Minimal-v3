@@ -19,7 +19,7 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     overflow-x: hidden;
     max-width: 100%;
     width: 100%;
@@ -213,7 +213,7 @@ section { padding: 140px 10%; }
     box-sizing: border-box;
 }
 .hero-title h1 {
-    font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     font-size: clamp(1.6rem, 8vw, 4rem);
     font-weight: 900;
     line-height: 0.95;
@@ -292,7 +292,7 @@ section { padding: 140px 10%; }
 }
 .editorial-accent {
     color: var(--accent-blue);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Noto Sans TC', sans-serif;
     font-style: italic;
     font-weight: 700;
 }
@@ -359,7 +359,7 @@ section { padding: 140px 10%; }
 .about-badge-item {
     font-size: 2rem;
     font-weight: 900;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     color: var(--accent-blue);
     padding: 0.5rem 1.5rem;
     border: 2px solid var(--border-light);
@@ -555,7 +555,7 @@ section { padding: 140px 10%; }
 }
 .detail-header-text { flex: 1; min-width: 0; }
 .detail-header h3 { font-size: 1.6rem; color: var(--accent-blue); font-weight: 900; }
-.detail-header p { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.3rem; font-family: 'DM Sans', sans-serif; }
+.detail-header p { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.3rem; font-family: 'Noto Sans TC', sans-serif; }
 
 .park-nav {
     flex-shrink: 0;
@@ -576,7 +576,7 @@ section { padding: 140px 10%; }
 .detail-stats-container { display: flex; gap: 3rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.06); }
 .stat-card { display: flex; flex-direction: column; align-items: flex-start; }
 .stat-card .label { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
-.stat-card .value { font-size: 2.2rem; font-weight: 900; color: var(--text-main); font-family: 'DM Sans', sans-serif; }
+.stat-card .value { font-size: 2.2rem; font-weight: 900; color: var(--text-main); font-family: 'Noto Sans TC', sans-serif; }
 .stat-card:last-child .value { color: var(--accent-orange); }
 
 .detail-image-col {
@@ -1067,7 +1067,7 @@ section { padding: 140px 10%; }
     font-size: 0.8rem; font-weight: 700;
     color: var(--text-secondary);
     margin: 0.6rem 0 1rem;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 #modal-title {
     font-size: 1.4rem; font-weight: 900;
@@ -1111,7 +1111,7 @@ section { padding: 140px 10%; }
 }
 .news-date {
     flex: 0 0 110px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--text-secondary);
@@ -1139,7 +1139,7 @@ section { padding: 140px 10%; }
 }
 .news-link {
     flex: 0 0 auto;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--accent-blue);
