@@ -496,8 +496,8 @@ section { padding: 140px 10%; }
     border-color: var(--accent-orange); transform: translateX(10px);
     background: #fdfdfd; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
-.park-name h4 { font-size: 1rem; margin-bottom: 0.2rem; }
-.park-name span { font-size: 0.7rem; color: var(--text-secondary); }
+.park-name h4 { font-size: 1rem; margin-bottom: 0; }
+.park-en { flex: 1; font-size: 0.78rem; color: var(--text-secondary); text-align: center; padding: 0 0.5rem; }
 .badge { font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 20px; background: #F1F5F9; }
 .badge.highlight { background: var(--accent-orange); color: white; }
 
