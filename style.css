@@ -726,9 +726,14 @@ section { padding: 140px 10%; }
     line-height: 2;
     color: #D4D4D4;
 }
-.footer-portal-link {
-    display: block;
+.footer-links-row {
+    display: flex;
+    gap: 1.5rem;
     margin-top: 0.6rem;
+    flex-wrap: wrap;
+}
+.footer-portal-link {
+    display: inline;
     font-size: 0.82rem;
     color: #AACCFF;
     text-decoration: underline;
