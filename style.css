@@ -167,36 +167,34 @@ section { padding: 140px 10%; }
     z-index: 0;
 }
 
-/* 右側漸層遮罩，讓標題文字可讀 */
+/* 漸層遮罩：左上暗（文字可讀）+ 右下暗（品牌文字區） */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(10, 20, 60, 0.55) 0%,
-        rgba(10, 20, 60, 0.1) 55%,
-        transparent 100%
-    );
+    background:
+        linear-gradient(to right,  rgba(5,15,40,0.72) 0%, rgba(5,15,40,0.25) 45%, transparent 65%),
+        linear-gradient(to top left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 35%, transparent 60%);
     z-index: 1;
 }
 
-/* 左側漸層遮罩（::before 偽元素，讓標題文字清晰可讀） */
-.hero::before {
-    content: '';
+/* 品牌名：右下角固定 */
+.hero-brand {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(10, 30, 60, 0.75) 0%,
-        rgba(10, 30, 60, 0.45) 50%,
-        transparent 100%
-    );
-    z-index: 1;
-    pointer-events: none;
+    bottom: 8%;
+    right: 6%;
+    z-index: 2;
+    text-align: right;
+    line-height: 1.2;
 }
+.hero-brand-uni,
+.hero-brand-express {
+    display: block;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 3.5vw, 3rem);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+.hero-brand-uni     { color: #3498db; }
+.hero-brand-express { color: #e67e22; }
 
 /* 標題：左側，錨定於視窗上方 1/3 處 */
 .hero-title {
@@ -871,16 +869,6 @@ section { padding: 140px 10%; }
     }
     .hero-title h1 { font-size: clamp(2.4rem, 5.5vw, 3.5rem); line-height: 1.0; }
 
-    /* 漸層遮罩：左側較寬 */
-    .hero::before {
-        width: 80%;
-        background: linear-gradient(
-            to right,
-            rgba(10, 30, 60, 0.7) 0%,
-            rgba(10, 30, 60, 0.4) 60%,
-            transparent 100%
-        );
-    }
     .hero-overlay {
         background: linear-gradient(
             to right,
@@ -942,24 +930,15 @@ section { padding: 140px 10%; }
         word-break: keep-all;
         white-space: nowrap;
     }
-    /* 遮罩：手機版由上到下 */
+    /* 遮罩：手機版 */
     .hero-overlay {
-        background: linear-gradient(
-            to top,
-            rgba(10,20,60,0.7) 0%,
-            rgba(10,20,60,0.2) 50%,
-            transparent 100%
-        );
+        background:
+            linear-gradient(to bottom, rgba(5,15,40,0.65) 0%, transparent 40%),
+            linear-gradient(to top left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 40%, transparent 65%);
     }
-    .hero::before {
-        width: 100%;
-        height: 50%;
-        background: linear-gradient(
-            to bottom,
-            rgba(10, 30, 60, 0.7) 0%,
-            transparent 100%
-        );
-    }
+    .hero-brand { bottom: 6%; right: 5%; }
+    .hero-brand-uni,
+    .hero-brand-express { font-size: clamp(1.2rem, 5vw, 1.8rem); }
     .hero-info-box {
         flex-direction: column;
         align-items: flex-start;
