@@ -228,7 +228,6 @@
                     </div>
                 </div>
                 <button class="fac-nav fac-next" type="button" id="facNext" aria-label="下一頁">&#8250;</button>
-                <div class="facility-dots" id="facilityDots"></div>
             </div>
         </section>
 
@@ -410,72 +409,35 @@
     <script>
 (function() {
     const track   = document.getElementById('facilityTrack');
-    const dotsEl  = document.getElementById('facilityDots');
     const prevBtn = document.getElementById('facPrev');
     const nextBtn = document.getElementById('facNext');
     if (!track) return;
 
     const slides = Array.from(track.querySelectorAll('.facility-slide'));
     const TOTAL  = slides.length;
-    const GAP    = 16;
-    let currentPage = 0;
+    let current = 0;
+    let timer   = null;
 
-    function getPerPage() {
-        const w = window.innerWidth;
-        if (w >= 1024) return 6;
-        if (w >= 600)  return 3;
-        return 2;
+    function activate(index) {
+        slides[current].classList.remove('active');
+        current = ((index % TOTAL) + TOTAL) % TOTAL;
+        slides[current].classList.add('active');
     }
 
-    function totalPages() {
-        return Math.ceil(TOTAL / getPerPage());
+    function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => activate(current + 1), 5000);
     }
 
-    function buildDots() {
-        if (!dotsEl) return;
-        dotsEl.innerHTML = '';
-        const pages = totalPages();
-        for (let i = 0; i < pages; i++) {
-            const btn = document.createElement('button');
-            btn.className = 'facility-dot' + (i === 0 ? ' active' : '');
-            btn.setAttribute('aria-label', `第 ${i + 1} 頁`);
-            btn.addEventListener('click', () => goTo(i));
-            dotsEl.appendChild(btn);
-        }
-        dotsEl.style.display = pages > 1 ? 'flex' : 'none';
-    }
+    if (prevBtn) prevBtn.addEventListener('click', () => { activate(current - 1); startTimer(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { activate(current + 1); startTimer(); });
 
-    function updateUI() {
-        const pages = totalPages();
-        if (dotsEl) {
-            dotsEl.querySelectorAll('.facility-dot').forEach((d, i) =>
-                d.classList.toggle('active', i === currentPage));
-        }
-        if (prevBtn) prevBtn.disabled = currentPage === 0;
-        if (nextBtn) nextBtn.disabled = currentPage === pages - 1;
-    }
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', () => clearInterval(timer));
+    track.parentElement.addEventListener('mouseleave', startTimer);
 
-    function goTo(page) {
-        const pages = totalPages();
-        currentPage = Math.max(0, Math.min(page, pages - 1));
-        const perPage   = getPerPage();
-        const slideW    = slides[0].offsetWidth;
-        const offset    = currentPage * perPage * (slideW + GAP);
-        track.style.transform = `translateX(-${offset}px)`;
-        updateUI();
-    }
-
-    if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentPage - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentPage + 1));
-
-    window.addEventListener('resize', () => {
-        currentPage = 0;
-        buildDots();
-        goTo(0);
-    });
-
-    buildDots();
-    updateUI();
+    activate(0);
+    startTimer();
 })();
     </script>
 </body>
