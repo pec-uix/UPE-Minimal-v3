@@ -627,7 +627,7 @@ section { padding: 140px 10%; }
 
 .detail-stats-container { display: flex; gap: 3rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.06); }
 .stat-card { display: flex; flex-direction: column; align-items: flex-start; }
-.stat-card .label { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-card .label { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 .stat-card .value { font-size: 2.2rem; font-weight: 900; color: var(--text-main); font-family: 'Noto Sans TC', sans-serif; }
 .stat-card:last-child .value { color: var(--accent-orange); }
 
