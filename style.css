@@ -720,8 +720,8 @@ section { padding: 140px 10%; }
 .info-col p { font-size: 0.9rem; line-height: 2; color: #D4D4D4; }
 .contact-grid {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.1rem 0.5rem;
+    grid-template-columns: max-content 1fr;
+    gap: 0.1rem 0.8rem;
     font-size: 0.9rem;
     line-height: 2;
     color: #D4D4D4;
@@ -1017,6 +1017,11 @@ section { padding: 140px 10%; }
     /* ── Footer ── */
     .footer { padding: 40px 5%; }
     .footer-info { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid {
+        grid-template-columns: max-content auto;
+        gap: 0.1rem 0.6rem;
+        font-size: 0.82rem;
+    }
 
     /* ── Floating Contact Button ── */
     .floating-contact {
