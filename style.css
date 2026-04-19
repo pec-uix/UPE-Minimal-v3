@@ -167,13 +167,11 @@ section { padding: 140px 10%; }
     z-index: 0;
 }
 
-/* 漸層遮罩：左上暗（文字可讀）+ 右下暗（品牌文字區） */
+/* 漸層遮罩：右下暗（品牌文字區） */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(to right,  rgba(5,15,40,0.72) 0%, rgba(5,15,40,0.25) 45%, transparent 65%),
-        linear-gradient(to top left, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 35%, transparent 60%);
+    background: linear-gradient(to top left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 35%, transparent 55%);
     z-index: 1;
 }
 
