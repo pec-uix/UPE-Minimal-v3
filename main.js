@@ -287,38 +287,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ── 最新消息 Modal ──
-const newsModal    = document.getElementById('news-modal');
-const modalOverlay = newsModal.querySelector('.news-modal-overlay');
-const modalClose   = newsModal.querySelector('.news-modal-close');
-const modalTag     = document.getElementById('modal-tag');
-const modalDate    = document.getElementById('modal-date');
-const modalTitle   = document.getElementById('modal-title');
-const modalBody    = document.getElementById('modal-body');
-
-function openNewsModal(item) {
-    modalTag.textContent   = item.dataset.tag   || '';
-    modalDate.textContent  = item.dataset.date  || '';
-    modalTitle.textContent = item.dataset.title || '';
-    modalBody.innerHTML    = `<p>${item.dataset.content || ''}</p>`;
-    newsModal.classList.add('open');
-    newsModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    cursor.style.display = 'none';
-}
-function closeNewsModal() {
-    newsModal.classList.remove('open');
-    newsModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    cursor.style.display = '';
-}
-
-document.querySelectorAll('.news-item').forEach(item => {
-    item.addEventListener('click', () => openNewsModal(item));
-});
-modalOverlay.addEventListener('click', closeNewsModal);
-modalClose.addEventListener('click', closeNewsModal);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNewsModal(); });
 
 // ── 漢堡選單 (Hamburger Menu) ──
 const navToggle = document.getElementById('nav-toggle');

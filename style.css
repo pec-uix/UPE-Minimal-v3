@@ -1101,34 +1101,33 @@ section { padding: 140px 10%; }
 .news-section { padding-bottom: 80px; }
 .news-heading { font-size: 3rem; font-weight: 900; margin: 1rem 0 3rem; }
 
-.news-list { list-style: none; }
+.news-list { list-style: none; padding: 0; }
 
 .news-item {
-    display: block;
     border-bottom: 1px solid #e5e7eb;
-    cursor: pointer;
     transition: background 0.2s;
 }
 .news-item:first-child { border-top: 1px solid #e5e7eb; }
-.news-item:hover { background: #fff; }
+.news-item:hover { background: #f8f8f8; }
 
 .news-row {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    padding: 1.6rem 0;
+    gap: 1.4rem;
+    padding: 1.6rem 0.5rem;
+    text-decoration: none;
+    color: inherit;
 }
 .news-date {
     flex: 0 0 110px;
-    font-family: 'Noto Sans TC', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--text-secondary);
+    color: #888;
     white-space: nowrap;
 }
-.news-tag {
+.news-tag-pill {
     flex: 0 0 auto;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: var(--accent-orange);
     border: 1px solid var(--accent-orange);
@@ -1139,7 +1138,7 @@ section { padding: 140px 10%; }
 .news-title {
     flex: 1 1 0%;
     min-width: 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-main);
     white-space: nowrap;
@@ -1148,7 +1147,6 @@ section { padding: 140px 10%; }
 }
 .news-link {
     flex: 0 0 auto;
-    font-family: 'Noto Sans TC', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--accent-blue);
@@ -1158,11 +1156,26 @@ section { padding: 140px 10%; }
 }
 .news-item:hover .news-link { color: var(--accent-orange); }
 
+.news-more-wrap { text-align: right; margin-top: 2rem; }
+.news-more-btn {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    padding: 0.6rem 1.6rem;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+}
+.news-more-btn:hover { background: var(--accent-blue); color: #fff; }
+
 /* Mobile */
 @media (max-width: 768px) {
     .news-section { padding: 60px 5% 60px; }
     .news-heading { font-size: 2rem; }
-    .news-row { flex-wrap: wrap; gap: 0.5rem; padding: 1.2rem 0; }
+    .news-row { flex-wrap: wrap; gap: 0.5rem; padding: 1.2rem 0.2rem; }
     .news-title {
         flex: 1 1 100%;
         white-space: normal;
