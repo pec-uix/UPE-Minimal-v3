@@ -43,22 +43,22 @@ const parkData = {
     "桃園航空城物流園區": {
         en: "Taoyuan Aerotropolis Logistics Park",
         land: "25,000", build: "68,000",
-        img: getImages("航空城")
+        img: ["images/桃園航空城物流園區.png", "images/園區3D圖及空拍圖-桃園航空城物流園區.png", "images/園區3D圖及空拍圖-桃園航空城物流園區4.png"]
     },
     "桃園楊梅民豐物流園區": {
         en: "Taoyuan Yangmei Minfeng Logistics Park",
         land: "7,000", build: "20,000",
-        img: getImages("楊梅民豐")
+        img: ["images/桃園楊梅民豐物流園區.png", "images/園區3D圖及空拍圖- 桃園楊梅民豐物流園區.png", "images/園區3D圖及空拍圖- 桃園楊梅民豐物流園區7.png", "images/園區3D圖及空拍圖- 桃園楊梅民豐物流園區9.jpg"]
     },
     "桃園U-PARK智匯產業園區": {
         en: "Taoyuan Intelligence Synergy Industrial Park",
         land: "33,000", build: "68,000",
-        img: getImages("U-PARK")
+        img: ["images/桃園 U-PARK 智匯產業園區.png", "images/園區3D圖及空拍圖-桃園U-PARK智匯產業園區8.png"]
     },
     "台中港物流園區": {
         en: "Taichung Port Logistics Park",
         land: "28,000", build: "44,000",
-        img: getImages("台中港")
+        img: ["images/台中港物流園區.png", "images/園區3D圖及空拍圖- 台中港物流園區10.jpg", "images/園區3D圖及空拍圖- 台中港物流園區11.jpg", "images/園區3D圖及空拍圖- 台中港物流園區12.jpg", "images/園區3D圖及空拍圖- 台中港物流園區13.jpg"]
     },
     "新市物流園區": {
         en: "Xinshi Logistics Park",
