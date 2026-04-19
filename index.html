@@ -198,42 +198,52 @@
                 <h2>園區設施一覽</h2>
             </div>
             <div class="facility-carousel">
-                <button class="fac-nav fac-prev" type="button" id="facPrev" aria-label="上一頁">&#8249;</button>
-                <div class="facility-viewport">
-                    <div class="facility-track" id="facilityTrack">
-                        <div class="facility-slide">
-                            <img src="images/員工生活區.png" alt="員工生活區">
+                <button class="fac-nav fac-prev" type="button" id="facPrev" aria-label="上一張">&#8249;</button>
+                <div class="facility-track" id="facilityTrack">
+                    <div class="facility-slide">
+                        <img src="images/員工生活區.png" alt="員工生活區">
+                        <div class="facility-caption">
                             <h4>員工生活區</h4>
                             <p>打造寬敞舒適共享餐飲空間，滿足園區員工多元用餐與休憩需求。</p>
                         </div>
-                        <div class="facility-slide">
-                            <img src="images/哺集乳室.png" alt="哺集乳室">
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/哺集乳室.png" alt="哺集乳室">
+                        <div class="facility-caption">
                             <h4>哺集乳室</h4>
                             <p>建置友善育兒空間，營造貼心完善的職場照護環境。</p>
                         </div>
-                        <div class="facility-slide">
-                            <img src="images/太陽能板.png" alt="太陽能板">
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/太陽能板.png" alt="太陽能板">
+                        <div class="facility-caption">
                             <h4>太陽能板</h4>
                             <p>建置綠能太陽光電設備，實踐節能減碳與永續發展理念。</p>
                         </div>
-                        <div class="facility-slide">
-                            <img src="images/國際會議廳.png" alt="國際會議廳">
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/國際會議廳.png" alt="國際會議廳">
+                        <div class="facility-caption">
                             <h4>國際會議廳</h4>
                             <p>配置現代化會議空間，支援多元商務交流與大型活動需求。</p>
                         </div>
-                        <div class="facility-slide">
-                            <img src="images/閱覽室.png" alt="閱覽室">
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/閱覽室.png" alt="閱覽室">
+                        <div class="facility-caption">
                             <h4>閱覽室</h4>
                             <p>打造靜謐閱覽環境，提供員工自主學習與休憩閱讀空間。</p>
                         </div>
-                        <div class="facility-slide">
-                            <img src="images/教育訓練室.png" alt="教育訓練室">
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/教育訓練室.png" alt="教育訓練室">
+                        <div class="facility-caption">
                             <h4>教育訓練室</h4>
                             <p>設置現代化教育訓練空間，提供專業技能培育與持續學習環境。</p>
                         </div>
                     </div>
                 </div>
-                <button class="fac-nav fac-next" type="button" id="facNext" aria-label="下一頁">&#8250;</button>
+                <button class="fac-nav fac-next" type="button" id="facNext" aria-label="下一張">&#8250;</button>
             </div>
         </section>
 
@@ -431,28 +441,39 @@
 
     const slides = Array.from(track.querySelectorAll('.facility-slide'));
     const TOTAL  = slides.length;
-    let current = 0;
-    let timer   = null;
+    let current  = 0;
+    let timer    = null;
 
-    function activate(index) {
-        slides[current].classList.remove('active');
+    function updatePositions() {
+        slides.forEach((slide, i) => {
+            // pos: relative offset from current (-2..2), circular
+            let pos = ((i - current) % TOTAL + TOTAL) % TOTAL;
+            if (pos > TOTAL / 2) pos -= TOTAL; // map to -2..2
+            if (Math.abs(pos) <= 2) {
+                slide.setAttribute('data-pos', pos);
+            } else {
+                slide.removeAttribute('data-pos');
+            }
+        });
+    }
+
+    function goTo(index) {
         current = ((index % TOTAL) + TOTAL) % TOTAL;
-        slides[current].classList.add('active');
+        updatePositions();
     }
 
     function startTimer() {
         clearInterval(timer);
-        timer = setInterval(() => activate(current + 1), 5000);
+        timer = setInterval(() => goTo(current + 1), 5000);
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', () => { activate(current - 1); startTimer(); });
-    if (nextBtn) nextBtn.addEventListener('click', () => { activate(current + 1); startTimer(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { goTo(current + 1); startTimer(); });
 
-    // Pause on hover
-    track.parentElement.addEventListener('mouseenter', () => clearInterval(timer));
-    track.parentElement.addEventListener('mouseleave', startTimer);
+    track.addEventListener('mouseenter', () => clearInterval(timer));
+    track.addEventListener('mouseleave', startTimer);
 
-    activate(0);
+    goTo(0);
     startTimer();
 })();
     </script>
