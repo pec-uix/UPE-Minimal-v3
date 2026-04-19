@@ -694,7 +694,7 @@ section { padding: 140px 10%; }
     color: #D4D4D4;
 }
 .footer-portal-link {
-    display: inline-block;
+    display: block;
     margin-top: 0.6rem;
     font-size: 0.82rem;
     color: #AACCFF;
