@@ -185,24 +185,46 @@
             </div>
         </section>
 
-        <!-- 4. Full-Width Tinted Image Break -->
-        <section class="image-break">
-            <img src="images/園區3D圖及空拍圖- 新市物流園區2.png" alt="園區空拍全景">
-            <div class="image-break-overlay"></div>
-        </section>
-
-        <!-- 5. Tech Gallery (marquee — unchanged) -->
+        <!-- 5. Facility Carousel -->
         <section id="tech" class="tech-gallery">
             <div class="section-header sh-blue">
-                <span class="section-tag">03 — Tech & Facilities</span>
-                <h2>智慧物流技術實力</h2>
+                <span class="section-tag">03 — FACILITIES</span>
+                <h2>園區設施一覽</h2>
             </div>
-            <div class="mq3d-section">
-                <div class="mq3d-outer" id="mq3dOuter">
-                    <div class="mq3d-track" id="mq3dTrack"></div>
-                    <div class="mq3d-fade-left"></div>
-                    <div class="mq3d-fade-right"></div>
+            <div class="facility-carousel">
+                <div class="facility-track" id="facilityTrack">
+                    <div class="facility-slide">
+                        <img src="images/員工生活區.png" alt="員工生活區">
+                        <h4>員工生活區</h4>
+                        <p>打造寬敞舒適共享餐飲空間，滿足園區員工多元用餐與休憩需求。</p>
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/哺集乳室.png" alt="哺集乳室">
+                        <h4>哺集乳室</h4>
+                        <p>建置友善育兒空間，營造貼心完善的職場照護環境。</p>
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/太陽能板.png" alt="太陽能板">
+                        <h4>太陽能板</h4>
+                        <p>建置綠能太陽光電設備，實踐節能減碳與永續發展理念。</p>
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/國際會議廳.png" alt="國際會議廳">
+                        <h4>國際會議廳</h4>
+                        <p>配置現代化會議空間，支援多元商務交流與大型活動需求。</p>
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/閱覽室.png" alt="閱覽室">
+                        <h4>閱覽室</h4>
+                        <p>打造靜謐閱覽環境，提供員工自主學習與休憩閱讀空間。</p>
+                    </div>
+                    <div class="facility-slide">
+                        <img src="images/教育訓練室.png" alt="教育訓練室">
+                        <h4>教育訓練室</h4>
+                        <p>設置現代化教育訓練空間，提供專業技能培育與持續學習環境。</p>
+                    </div>
                 </div>
+                <div class="facility-dots" id="facilityDots"></div>
             </div>
         </section>
 
@@ -382,7 +404,7 @@
                     <h5>公司資訊</h5>
                     <p>統流開發股份有限公司<br>統一編號：83271725</p>
                     <a href="#" target="_blank" class="footer-portal-link">員工入口網站</a>
-                    <a href="https://www.104.com.tw" target="_blank" rel="noopener" class="footer-portal-link">加入我們 Join Us</a>
+                    <a href="https://www.104.com.tw/company/1a2x6blmr6?jobsource=google" target="_blank" rel="noopener" class="footer-portal-link">職缺訊息</a>
                 </div>
                 <div class="info-col">
                     <h5>據點位置</h5>
@@ -404,104 +426,48 @@
     <script src="main.js"></script>
     <script>
 (function() {
-  const ITEMS = [
-    { src: 'images/_DSC7968.jpg', label: '全球數位物流連結中心' },
-    { src: 'images/_DSC7933.jpg', label: '智慧物流網路展示廳' },
-    { src: 'images/_DSC7739.jpg', label: '科技感品牌展示台' },
-    { src: 'images/_DSC7649.jpg', label: '物流自動化品牌展區' },
-    { src: 'images/_DSC7654.jpg', label: '現代化物流展示空間' },
-    { src: 'images/_DSC7584.jpg', label: '園區行政大樓入口大廳' },
-    { src: 'images/_DSC7589.jpg', label: '科技數位藝術走廊' },
-    { src: 'images/_DSC7599.jpg', label: '行政大樓電梯廳' },
-    { src: 'images/_DSC7639.jpg', label: '開放式接待展廳' },
-    { src: 'images/_DSC7689.jpg', label: '接待大廳交誼區' },
-    { src: 'images/_DSC7719.jpg', label: '接待大廳全景' },
-    { src: 'images/_DSC7729.jpg', label: '品牌接待台特寫' },
-    { src: 'images/_DSC7754.jpg', label: '高規格弧形演講廳' },
-    { src: 'images/_DSC7769.jpg', label: '演講廳座席區' },
-    { src: 'images/_DSC7794.jpg', label: '大型多功能演講廳' },
-    { src: 'images/_DSC7799.jpg', label: '演講廳全景' },
-    { src: 'images/_DSC7923.jpg', label: '物流設施展示等候區' },
-    { src: 'images/_DSC7998.jpg', label: '主管辦公室' },
-    { src: 'images/_DSC8003.jpg', label: '主管辦公室休息區' },
-    { src: 'images/_DSC8028.jpg', label: '開放式辦公工作區' },
-    { src: 'images/_DSC8068.jpg', label: '多功能訓練教室' },
-    { src: 'images/_DSC8073.jpg', label: '大型多功能活動廳' },
-    { src: 'images/_DSC8083.jpg', label: '多功能廳世界地圖牆' },
-    { src: 'images/_DSC8088.jpg', label: '多功能廳全景' },
-    { src: 'images/_DSC8103.jpg', label: '多功能廳側翼空間' },
-    { src: 'images/_DSC8148.jpg', label: '員工餐廳設計特區' },
-    { src: 'images/_DSC8173.jpg', label: '員工餐廳彩虹牆特寫' },
-    { src: 'images/_DSC8208.jpg', label: '員工餐廳全景' },
-    { src: 'images/_DSC8273.jpg', label: '員工餐廳入口視角' },
-    { src: 'images/_DSC8278.jpg', label: '員工餐廳用餐區' },
-    { src: 'images/_DSC8288.jpg', label: '員工閱讀休息室' },
-    { src: 'images/_DSC8298.jpg', label: '員工餐廳綠植區' },
-    { src: 'images/_DSC8383.jpg', label: '員工休息廳便利服務區' },
-    { src: 'images/_DSC8428.jpg', label: '行政大樓走廊' },
-    { src: 'images/_DSC8433.jpg', label: '行政大樓電梯廳' },
-    { src: 'images/_DSC8448.jpg', label: '行政大樓六層挑高中庭' },
-    { src: 'images/_DSC8378.jpg', label: '園區行政大樓外觀' },
-  ];
+    const track = document.getElementById('facilityTrack');
+    const dotsEl = document.getElementById('facilityDots');
+    if (!track || !dotsEl) return;
 
-  const CARD_W = 280;
-  const CARD_H = 190;
-  const GAP = 20;
-  const SPEED = 0.55;
-  const CENTER_SCALE = 1.55;
-  const SIDE_SCALE = 0.75;
+    const slides = Array.from(track.querySelectorAll('.facility-slide'));
+    const total = slides.length;
+    let current = 0;
+    let timer = null;
 
-  const track = document.getElementById('mq3dTrack');
-  const outer = document.getElementById('mq3dOuter');
-  if (!track || !outer) return;
-
-  const allItems = [...ITEMS, ...ITEMS];
-
-  allItems.forEach((item) => {
-    const wrap = document.createElement('div');
-    wrap.className = 'mq3d-card';
-    const img = document.createElement('img');
-    img.src = item.src;
-    img.alt = item.label;
-    img.loading = 'eager';
-    wrap.appendChild(img);
-    track.appendChild(wrap);
-  });
-
-  let offset = 0;
-  let paused = false;
-
-  function updateCards() {
-    const center = outer.offsetWidth / 2;
-    Array.from(track.children).forEach((wrap, i) => {
-      const cardCenter = -offset + i * (CARD_W + GAP) + CARD_W / 2;
-      const dist = Math.abs(cardCenter - center);
-      const maxDist = center + CARD_W;
-      const t = Math.max(0, 1 - dist / maxDist);
-      const scale = SIDE_SCALE + (CENTER_SCALE - SIDE_SCALE) * Math.pow(t, 1.8);
-      const tz = -100 * (1 - t);
-      const opacity = 0.4 + 0.6 * t;
-      wrap.style.transform = `scale(${scale}) translateZ(${tz}px)`;
-      wrap.style.opacity = opacity;
-      wrap.style.zIndex = Math.round(t * 10);
+    // Build dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'facility-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(dot);
     });
-  }
 
-  function loop() {
-    if (!paused) {
-      offset += SPEED;
-      const singleLen = ITEMS.length * (CARD_W + GAP);
-      if (offset >= singleLen) offset -= singleLen;
-      track.style.transform = `translateX(${-offset}px)`;
-      updateCards();
+    function updateDots() {
+        dotsEl.querySelectorAll('.facility-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+        });
     }
-    requestAnimationFrame(loop);
-  }
 
-  outer.addEventListener('mouseenter', () => { paused = true; });
-  outer.addEventListener('mouseleave', () => { paused = false; });
+    function goTo(index) {
+        slides[current].classList.remove('active');
+        current = ((index % total) + total) % total;
+        slides[current].classList.add('active');
+        updateDots();
+    }
 
-  loop();
+    function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    // Init first slide
+    slides[0].classList.add('active');
+    startTimer();
+
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', () => clearInterval(timer));
+    track.parentElement.addEventListener('mouseleave', startTimer);
 })();
     </script>
 </body>
