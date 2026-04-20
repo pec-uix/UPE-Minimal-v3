@@ -523,18 +523,22 @@ section { padding: 140px 10%; }
 
 /* ── 6. Locations ── */
 .locations-container { display: grid; grid-template-columns: 1fr 0.6fr 1.4fr; gap: 2rem; align-items: center; }
-.location-list-wrapper { position: relative; display: flex; align-items: center; gap: 0.5rem; }
+.location-list-wrapper { position: relative; width: 100%; }
 .card-list-nav {
     display: none; /* hidden on desktop – cards are vertical list */
-    flex-shrink: 0;
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
     width: 36px; height: 36px; border-radius: 50%;
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(0,0,0,0.15);
     background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     color: var(--text-primary); font-size: 1.4rem; line-height: 1;
     align-items: center; justify-content: center;
     cursor: pointer; transition: background 0.2s, border-color 0.2s;
     z-index: 10;
 }
+.card-list-prev { left: 0; }
+.card-list-next { right: 0; }
 .card-list-nav:hover { background: var(--accent-orange); border-color: var(--accent-orange); color: white; }
 .location-list { display: flex; flex-direction: column; gap: 0.5rem; }
 .park-card {
@@ -803,24 +807,22 @@ section { padding: 140px 10%; }
     #taiwan-svg { max-width: 220px; }
     .location-list-wrapper { width: 100%; }
     .location-list {
-        flex: 1;
+        width: 100%;
         min-width: 0;
         display: flex;
         flex-direction: row;
         overflow-x: scroll;
         gap: 0.8rem;
-        padding-bottom: 0.5rem;
+        padding: 0.5rem 44px 0.5rem;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
         touch-action: pan-x;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
     }
     .location-list::-webkit-scrollbar { display: none; }
     .location-list .park-card {
-        min-width: 280px;
-        max-width: 320px;
+        min-width: calc(100% - 88px);
+        max-width: calc(100% - 88px);
         flex-shrink: 0;
         scroll-snap-align: center;
         transform: none !important;
@@ -879,25 +881,23 @@ section { padding: 140px 10%; }
     #taiwan-svg { max-width: 200px; }
     .location-list-wrapper { width: 100%; }
     .location-list {
-        flex: 1;
+        width: 100%;
         min-width: 0;
         display: flex;
         flex-direction: row;
         overflow-x: scroll;
         gap: 0.8rem;
-        padding-bottom: 0.5rem;
+        padding: 0.5rem 44px 0.5rem;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         -webkit-scroll-snap-type: x mandatory;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
         scrollbar-width: none;
         touch-action: pan-x;
     }
     .location-list::-webkit-scrollbar { display: none; }
     .location-list .park-card {
-        min-width: 220px;
-        max-width: 260px;
+        min-width: calc(100% - 88px);
+        max-width: calc(100% - 88px);
         flex-shrink: 0;
         scroll-snap-align: center;
         transform: none !important;
@@ -1050,16 +1050,15 @@ section { padding: 140px 10%; }
     #locations { padding: 60px 5%; }
     #locations h2 { font-size: 1.8rem !important; margin-bottom: 1.5rem !important; }
 
-    /* 手機：一次顯示一張卡片的 carousel，scroll-snap-align: center 置中 */
+    /* 手機：一次顯示一張卡片的 carousel，箭頭 absolute 疊在上面 */
     .location-list-wrapper { width: 100%; }
     .location-list {
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0.5rem 44px 0.5rem;
         touch-action: pan-x;
     }
     .location-list .park-card {
-        min-width: 78vw;
-        max-width: 78vw;
+        min-width: calc(100% - 88px);
+        max-width: calc(100% - 88px);
         scroll-snap-align: center;
     }
 
