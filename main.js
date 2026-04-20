@@ -236,16 +236,16 @@ parkCards.forEach(card => {
         card.classList.add('active');
         setHighlight(card.getAttribute('data-region'), card.getAttribute('data-city'));
         updateDetailView(card);
+        centerActiveCard(card);
     });
     card.addEventListener('click', (e) => {
         e.preventDefault();
         parkCards.forEach(c => c.classList.remove('active'));
         card.classList.add('active');
         setHighlight(card.getAttribute('data-region'), card.getAttribute('data-city'));
-        // Force update even if same card (clear currentDetailName first)
         currentDetailName = '';
         updateDetailView(card);
-        // Scroll to detail panel on mobile
+        centerActiveCard(card);
         const detail = document.getElementById('park-detail-section');
         if (detail) detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
@@ -261,6 +261,7 @@ paths.forEach(path => {
                 parkCards.forEach(c => c.classList.remove('active'));
                 targetCard.classList.add('active');
                 updateDetailView(targetCard);
+                centerActiveCard(targetCard);
             }
             setHighlight(region, city);
         }
@@ -270,7 +271,7 @@ paths.forEach(path => {
 setHighlight('south', 'tainan');
 window.addEventListener('DOMContentLoaded', () => {
     const defaultCard = document.querySelector('.park-card.active');
-    if(defaultCard) updateDetailView(defaultCard);
+    if(defaultCard) { updateDetailView(defaultCard); centerActiveCard(defaultCard); }
 
     document.querySelectorAll('.img-nav').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -331,6 +332,14 @@ if (navToggle && navMenu) {
     });
 }
 
+// ── 將卡片捲動到列表中央 ──
+function centerActiveCard(card) {
+    const list = document.querySelector('.location-list');
+    if (!list || !card) return;
+    const cardLeft = card.offsetLeft - list.offsetLeft;
+    list.scrollTo({ left: cardLeft - (list.clientWidth - card.offsetWidth) / 2, behavior: 'smooth' });
+}
+
 // ── 切換園區 ──
 function navigatePark(direction) {
     const cards = Array.from(document.querySelectorAll('.park-card'));
@@ -342,13 +351,7 @@ function navigatePark(direction) {
     nextCard.classList.add('active');
     setHighlight(nextCard.getAttribute('data-region'), nextCard.getAttribute('data-city'));
     updateDetailView(nextCard);
-
-    // 手機：捲動 location-list 容器（不用 scrollIntoView 避免頁面跳動）
-    const list = document.querySelector('.location-list');
-    if (list) {
-        const cardLeft = nextCard.offsetLeft - list.offsetLeft;
-        list.scrollTo({ left: cardLeft - (list.clientWidth - nextCard.offsetWidth) / 2, behavior: 'smooth' });
-    }
+    centerActiveCard(nextCard);
 }
 
 // ── Park Nav 按鈕 ──
