@@ -308,6 +308,7 @@ section { padding: 140px 10%; }
 
 .editorial-image {
     overflow: hidden;
+    border-radius: 12px;
 }
 .editorial-image img {
     width: 100%;
