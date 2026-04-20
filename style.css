@@ -543,7 +543,7 @@ section { padding: 140px 10%; }
 .location-list { display: flex; flex-direction: column; gap: 0.5rem; }
 .park-card {
     background: white; padding: 1.2rem; border: 1px solid var(--border-light);
-    border-radius: 4px; display: flex; justify-content: space-between; align-items: center;
+    border-radius: 4px; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;
     transition: var(--transition-smooth); text-decoration: none; color: inherit;
 }
 .park-card:hover, .park-card.active {
