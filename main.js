@@ -292,29 +292,36 @@ window.addEventListener('DOMContentLoaded', () => {
     // ── Mobile card scroll-snap → auto select centered card ──
     const locationList = document.querySelector('.location-list');
     if (locationList) {
-        let snapTimer = null;
-        locationList.addEventListener('scroll', () => {
-            clearTimeout(snapTimer);
-            snapTimer = setTimeout(() => {
-                const listRect = locationList.getBoundingClientRect();
-                const listCenter = listRect.left + listRect.width / 2;
-                let closestCard = null;
-                let closestDist = Infinity;
-                parkCards.forEach(card => {
-                    const cardRect = card.getBoundingClientRect();
-                    const dist = Math.abs((cardRect.left + cardRect.width / 2) - listCenter);
-                    if (dist < closestDist) { closestDist = dist; closestCard = card; }
-                });
-                if (closestCard && !closestCard.classList.contains('active')) {
-                    parkCards.forEach(c => c.classList.remove('active'));
-                    closestCard.classList.add('active');
-                    setHighlight(closestCard.getAttribute('data-region'), closestCard.getAttribute('data-city'));
-                    currentDetailName = '';
-                    updateDetailView(closestCard);
-                    centerActiveCard(closestCard);
-                }
-            }, 150);
-        }, { passive: true });
+        function selectCenteredCard() {
+            const listRect = locationList.getBoundingClientRect();
+            const listCenter = listRect.left + listRect.width / 2;
+            let closestCard = null;
+            let closestDist = Infinity;
+            parkCards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const dist = Math.abs((cardRect.left + cardRect.width / 2) - listCenter);
+                if (dist < closestDist) { closestDist = dist; closestCard = card; }
+            });
+            if (closestCard && !closestCard.classList.contains('active')) {
+                parkCards.forEach(c => c.classList.remove('active'));
+                closestCard.classList.add('active');
+                setHighlight(closestCard.getAttribute('data-region'), closestCard.getAttribute('data-city'));
+                currentDetailName = '';
+                updateDetailView(closestCard);
+            }
+        }
+
+        // scrollend：滑動真正停止時立即觸發（iOS 17.4+、Chrome 114+）
+        if ('onscrollend' in locationList) {
+            locationList.addEventListener('scrollend', selectCenteredCard, { passive: true });
+        } else {
+            // fallback：debounce 80ms
+            let snapTimer = null;
+            locationList.addEventListener('scroll', () => {
+                clearTimeout(snapTimer);
+                snapTimer = setTimeout(selectCenteredCard, 80);
+            }, { passive: true });
+        }
     }
 
     // ── Touch Swipe for detail image ──
