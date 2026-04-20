@@ -401,6 +401,8 @@ function navigatePark(direction) {
 // ── Park Nav 按鈕 ──
 document.getElementById('park-prev')?.addEventListener('click', () => navigatePark(-1));
 document.getElementById('park-next')?.addEventListener('click', () => navigatePark(1));
+document.getElementById('card-list-prev')?.addEventListener('click', () => navigatePark(-1));
+document.getElementById('card-list-next')?.addEventListener('click', () => navigatePark(1));
 
 // ── 文字面板 Touch Swipe（切換園區，僅綁定文字區避免與圖片滑動衝突） ──
 const detailTextCol = document.querySelector('.detail-text-col');
