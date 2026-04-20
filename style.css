@@ -642,7 +642,7 @@ section { padding: 140px 10%; }
 .detail-image-col {
     border-radius: 12px; overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; background: #E2E8F0;
-    width: 100%; height: 450px;
+    width: 100%; aspect-ratio: 16/9; height: auto;
 }
 .detail-image-col img {
     width: 100%; height: 100%; object-fit: cover;
@@ -812,7 +812,6 @@ section { padding: 140px 10%; }
         transform: none !important;
     }
     #park-detail-section { order: 3; width: 100%; }
-    .detail-image-col { height: 420px; }
 }
 
 /* ── Responsive ── */
@@ -891,7 +890,6 @@ section { padding: 140px 10%; }
         order: 3;
         width: 100%;
     }
-    .detail-image-col { height: 250px; }
     .detail-image-col img { width: 100%; height: 100%; object-fit: cover; }
 
     /* Footer */
@@ -1045,8 +1043,7 @@ section { padding: 140px 10%; }
         max-width: 82vw;
     }
 
-    /* 詳細面板圖片：高度改用 aspect-ratio 自適應 */
-    .detail-image-col { height: 220px; min-height: 220px; }
+    /* 詳細面板圖片：aspect-ratio 等比縮放 */
     .detail-stats-container { gap: 1.5rem; flex-wrap: wrap; }
     .stat-card .value { font-size: 1.6rem; }
 
