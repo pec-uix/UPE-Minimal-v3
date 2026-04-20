@@ -808,7 +808,7 @@ section { padding: 140px 10%; }
         min-width: 280px;
         max-width: 320px;
         flex-shrink: 0;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
         transform: none !important;
     }
     #park-detail-section { order: 3; width: 100%; }
@@ -883,7 +883,7 @@ section { padding: 140px 10%; }
         min-width: 220px;
         max-width: 260px;
         flex-shrink: 0;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
         transform: none !important;
     }
     #park-detail-section {
@@ -1030,17 +1030,16 @@ section { padding: 140px 10%; }
     #locations { padding: 60px 5%; }
     #locations h2 { font-size: 1.8rem !important; margin-bottom: 1.5rem !important; }
 
-    /* 手機：一次顯示一張卡片的 carousel
-       90vw ≈ section content width（section 左右各 5% padding）
-       card = 82vw，padding-right = 8vw，確保最後一張可捲到
-       needed: padding-right >= containerWidth - cardWidth = 90vw - 82vw = 8vw ✓ */
+    /* 手機：一次顯示一張卡片的 carousel，scroll-snap-align: center 置中
+       container ≈ 90vw，card = 82vw → 兩側各 4vw padding 讓首尾卡片也能置中 */
     .location-list {
         padding-left: 4vw;
-        padding-right: 8vw;
+        padding-right: 4vw;
     }
     .location-list .park-card {
         min-width: 82vw;
         max-width: 82vw;
+        scroll-snap-align: center;
     }
 
     /* 詳細面板圖片：aspect-ratio 等比縮放 */
