@@ -801,18 +801,19 @@ section { padding: 140px 10%; }
     }
     .map-wrapper { order: 1; width: 100%; align-items: center; }
     #taiwan-svg { max-width: 220px; }
-    .location-list-wrapper { width: 100%; order: 2; }
+    .location-list-wrapper { width: 100%; }
     .location-list {
         flex: 1;
         min-width: 0;
         display: flex;
         flex-direction: row;
-        overflow-x: auto;
+        overflow-x: scroll;
         gap: 0.8rem;
         padding-bottom: 0.5rem;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
+        touch-action: pan-x;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
@@ -876,13 +877,13 @@ section { padding: 140px 10%; }
         align-items: center;
     }
     #taiwan-svg { max-width: 200px; }
-    .location-list-wrapper { width: 100%; order: 2; }
+    .location-list-wrapper { width: 100%; }
     .location-list {
         flex: 1;
         min-width: 0;
         display: flex;
         flex-direction: row;
-        overflow-x: auto;
+        overflow-x: scroll;
         gap: 0.8rem;
         padding-bottom: 0.5rem;
         -webkit-overflow-scrolling: touch;
@@ -891,6 +892,7 @@ section { padding: 140px 10%; }
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         scrollbar-width: none;
+        touch-action: pan-x;
     }
     .location-list::-webkit-scrollbar { display: none; }
     .location-list .park-card {
@@ -1049,10 +1051,11 @@ section { padding: 140px 10%; }
     #locations h2 { font-size: 1.8rem !important; margin-bottom: 1.5rem !important; }
 
     /* 手機：一次顯示一張卡片的 carousel，scroll-snap-align: center 置中 */
-    .location-list-wrapper { width: 100%; order: 2; }
+    .location-list-wrapper { width: 100%; }
     .location-list {
         padding-left: 0;
         padding-right: 0;
+        touch-action: pan-x;
     }
     .location-list .park-card {
         min-width: 78vw;
