@@ -124,16 +124,31 @@
             margin: 0 auto;
         }
         .news-article.active { display: block; }
+        .news-article-back-nav {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
         .news-article-back {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
             font-size: 0.82rem;
             font-weight: 700;
             color: var(--accent-blue);
             text-decoration: none;
-            margin-bottom: 2.5rem;
             letter-spacing: 0.05em;
+            padding: 0.4rem 1rem;
+            border: 1px solid currentColor;
+            border-radius: 20px;
+            transition: color 0.2s, background 0.2s, border-color 0.2s;
         }
-        .news-article-back:hover { color: var(--accent-orange); }
+        .news-article-back:hover {
+            color: white;
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
         .news-article-date { font-size: 0.82rem; color: #888; font-weight: 700; margin-bottom: 0.5rem; }
         .news-article-tag {
             display: inline-block;
@@ -272,7 +287,10 @@
 
     <!-- Article Detail Views -->
     <div id="n1" class="news-article">
-        <a href="news.html" class="news-article-back">← 返回最新消息</a>
+        <div class="news-article-back-nav">
+            <a href="index.html" class="news-article-back">← 首頁</a>
+            <a href="news.html" class="news-article-back js-back-to-list">← 所有最新消息</a>
+        </div>
         <div class="news-article-date">2026.03.01</div>
         <span class="news-article-tag">園區動態</span>
         <h2>新市物流園區正式啟用，南台灣最大複合式物流中心開幕</h2>
@@ -282,7 +300,10 @@
     </div>
 
     <div id="n2" class="news-article">
-        <a href="news.html" class="news-article-back">← 返回最新消息</a>
+        <div class="news-article-back-nav">
+            <a href="index.html" class="news-article-back">← 首頁</a>
+            <a href="news.html" class="news-article-back js-back-to-list">← 所有最新消息</a>
+        </div>
         <div class="news-article-date">2026.02.14</div>
         <span class="news-article-tag">企業消息</span>
         <h2>統流開發完成桃園航空城物流園區土地取得，正式啟動規劃作業</h2>
@@ -292,7 +313,10 @@
     </div>
 
     <div id="n3" class="news-article">
-        <a href="news.html" class="news-article-back">← 返回最新消息</a>
+        <div class="news-article-back-nav">
+            <a href="index.html" class="news-article-back">← 首頁</a>
+            <a href="news.html" class="news-article-back js-back-to-list">← 所有最新消息</a>
+        </div>
         <div class="news-article-date">2026.01.20</div>
         <span class="news-article-tag">技術導入</span>
         <h2>UPE 導入 AI 倉儲調度系統，揀貨效率提升 40%</h2>
@@ -302,7 +326,10 @@
     </div>
 
     <div id="n4" class="news-article">
-        <a href="news.html" class="news-article-back">← 返回最新消息</a>
+        <div class="news-article-back-nav">
+            <a href="index.html" class="news-article-back">← 首頁</a>
+            <a href="news.html" class="news-article-back js-back-to-list">← 所有最新消息</a>
+        </div>
         <div class="news-article-date">2025.12.05</div>
         <span class="news-article-tag">合作公告</span>
         <h2>統流開發與統昶行銷簽署長期物流服務協議，強化集團供應鏈整合</h2>
@@ -364,8 +391,8 @@
         window.addEventListener('popstate', route);
         route();
 
-        // Back buttons: smooth in-page navigation (no full reload)
-        document.querySelectorAll('.news-article-back').forEach(btn => {
+        // Back to list buttons: smooth in-page navigation (no full reload)
+        document.querySelectorAll('.js-back-to-list').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 history.pushState({}, '', 'news.html');
