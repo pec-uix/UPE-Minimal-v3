@@ -771,8 +771,46 @@ section { padding: 140px 10%; }
 
 /* ── 平板橫向 / 小筆電 (1025px–1280px) ── */
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .hero { height: 55vw; max-height: 680px; overflow: hidden; }
+    /* 切換成 hamburger nav，避免選單在此寬度換行擠壓 */
+    .nav-menu { display: none; }
+    .nav-toggle { display: flex; }
+    nav { position: sticky; top: 0; }
+
+    /* Hero 固定高度，不隨視窗壓縮 */
+    .hero { height: 560px; min-height: 560px; max-height: 560px; overflow: hidden; }
     .hero-title h1 { font-size: clamp(2.8rem, 5vw, 3.8rem); }
+
+    /* Locations：改為直排（同平板），防止三欄過擠 */
+    .locations-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .map-wrapper { order: 1; width: 100%; align-items: center; }
+    #taiwan-svg { max-width: 220px; }
+    .location-list {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 0.8rem;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .location-list::-webkit-scrollbar { display: none; }
+    .location-list .park-card {
+        min-width: 280px;
+        max-width: 320px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        transform: none !important;
+    }
+    #park-detail-section { order: 3; width: 100%; }
+    .detail-image-col { height: 420px; }
 }
 
 /* ── Responsive ── */
