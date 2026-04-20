@@ -859,7 +859,7 @@ section { padding: 140px 10%; }
 /* ── 平板直向 (769px–1024px) ── */
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Nav：relative 讓 hero 獨立在下方 */
-    nav { position: relative; background-color: #30327B; }
+    nav { position: sticky; top: 0; background-color: #30327B; }
     .logo-img { height: 52px; }
     .logo-zh { font-size: 1.7rem; letter-spacing: 0.18em; line-height: 1; }
     .logo-en { font-size: 0.72rem; letter-spacing: 0.05em; line-height: 1; }
@@ -896,7 +896,7 @@ section { padding: 140px 10%; }
     section { padding: 60px 5%; }
 
     /* ── Nav ── */
-    nav { padding: 0.6rem 5%; position: relative; background-color: #30327B; }
+    nav { padding: 0.6rem 5%; position: sticky; top: 0; background-color: #30327B; }
     .logo-container { height: 52px; gap: 0.5rem; }
     .logo-img { height: 50px; }
     .logo-zh { font-size: 1.45rem; letter-spacing: 0.15em; line-height: 1; }
