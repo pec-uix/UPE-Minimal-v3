@@ -936,9 +936,7 @@ section { padding: 140px 10%; }
     }
     /* 遮罩：手機版 */
     .hero-overlay {
-        background:
-            linear-gradient(to bottom, rgba(5,15,40,0.45) 0%, transparent 30%),
-            linear-gradient(to top left, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 12%, transparent 20%);
+        background: linear-gradient(to top left, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 12%, transparent 20%);
     }
     .hero-brand { bottom: 6%; right: 5%; }
     .hero-brand-uni,
