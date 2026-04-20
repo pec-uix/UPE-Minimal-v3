@@ -282,6 +282,33 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ── Mobile card scroll-snap → auto select centered card ──
+    const locationList = document.querySelector('.location-list');
+    if (locationList) {
+        let snapTimer = null;
+        locationList.addEventListener('scroll', () => {
+            clearTimeout(snapTimer);
+            snapTimer = setTimeout(() => {
+                const listRect = locationList.getBoundingClientRect();
+                const listCenter = listRect.left + listRect.width / 2;
+                let closestCard = null;
+                let closestDist = Infinity;
+                parkCards.forEach(card => {
+                    const cardRect = card.getBoundingClientRect();
+                    const dist = Math.abs((cardRect.left + cardRect.width / 2) - listCenter);
+                    if (dist < closestDist) { closestDist = dist; closestCard = card; }
+                });
+                if (closestCard && !closestCard.classList.contains('active')) {
+                    parkCards.forEach(c => c.classList.remove('active'));
+                    closestCard.classList.add('active');
+                    setHighlight(closestCard.getAttribute('data-region'), closestCard.getAttribute('data-city'));
+                    currentDetailName = '';
+                    updateDetailView(closestCard);
+                }
+            }, 150);
+        }, { passive: true });
+    }
+
     // ── Touch Swipe for detail image ──
     const imageCol = document.querySelector('.detail-image-col');
     if (imageCol) {
