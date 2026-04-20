@@ -53,11 +53,11 @@ nav {
     border-bottom: 2px solid #E8622A;
     color: #FFFFFF;
 }
-.logo-container { height: 65px; display: flex; align-items: center; gap: 0.8rem; }
-.logo-img { height: 60px; width: auto; object-fit: contain; mix-blend-mode: screen; display: block; }
-.logo-text { display: flex; flex-direction: column; justify-content: center; gap: 0.1rem; }
-.logo-zh { font-size: 1.35rem; font-weight: 700; color: #FFFFFF; letter-spacing: 0.18em; line-height: 1.2; white-space: nowrap; }
-.logo-en { font-size: 0.75rem; color: rgba(255,255,255,0.7); letter-spacing: 0.04em; line-height: 1.2; white-space: nowrap; }
+.logo-container { height: 65px; display: flex; align-items: center; gap: 0.6rem; }
+.logo-img { height: 64px; width: auto; object-fit: contain; mix-blend-mode: screen; display: block; }
+.logo-text { display: flex; flex-direction: column; justify-content: center; gap: 0.15rem; }
+.logo-zh { font-size: 1.55rem; font-weight: 700; color: #FFFFFF; letter-spacing: 0.22em; line-height: 1.15; white-space: nowrap; font-family: 'Noto Sans TC', sans-serif; }
+.logo-en { font-size: 0.72rem; color: rgba(255,255,255,0.88); letter-spacing: 0.06em; line-height: 1.2; white-space: nowrap; font-family: 'Noto Sans TC', sans-serif; }
 .nav-menu { display: flex; gap: 2rem; font-weight: 700; letter-spacing: 0.5px; }
 .nav-menu a { text-decoration: none; color: #FFFFFF; transition: 0.3s; position: relative; display: flex; flex-direction: column; align-items: center; }
 .nav-menu a .nav-zh { font-size: 1.7rem; line-height: 1.3; }
@@ -856,9 +856,9 @@ section { padding: 140px 10%; }
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Nav：relative 讓 hero 獨立在下方 */
     nav { position: relative; background-color: #30327B; }
-    .logo-img { height: 48px; }
-    .logo-zh { font-size: 0.95rem; letter-spacing: 0.12em; }
-    .logo-en { font-size: 0.55rem; }
+    .logo-img { height: 52px; }
+    .logo-zh { font-size: 1.1rem; letter-spacing: 0.18em; }
+    .logo-en { font-size: 0.6rem; letter-spacing: 0.05em; }
 
     /* Hero */
     .hero { height: 60vw; max-height: 600px; min-height: 400px; overflow: hidden; }
@@ -893,10 +893,10 @@ section { padding: 140px 10%; }
 
     /* ── Nav ── */
     nav { padding: 0.6rem 5%; position: relative; background-color: #30327B; }
-    .logo-container { height: 50px; }
-    .logo-img { height: 44px; }
-    .logo-en { display: none; }
-    .logo-zh { font-size: 0.9rem; letter-spacing: 0.1em; }
+    .logo-container { height: 52px; gap: 0.5rem; }
+    .logo-img { height: 50px; }
+    .logo-zh { font-size: 1rem; letter-spacing: 0.15em; }
+    .logo-en { display: block; font-size: 0.58rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.82); }
 
     /* ── Hero mobile (481px–768px 基準) ── */
     .hero {
@@ -1035,7 +1035,9 @@ section { padding: 140px 10%; }
 
 /* ── 手機直向 (≤ 480px) ── */
 @media (max-width: 480px) {
-    .logo-img { height: 36px; }
+    .logo-img { height: 42px; }
+    .logo-zh { font-size: 0.9rem; letter-spacing: 0.12em; }
+    .logo-en { font-size: 0.52rem; }
 
     .hero {
         height: 85vw;
