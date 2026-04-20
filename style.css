@@ -171,7 +171,7 @@ section { padding: 140px 10%; }
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top left, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 12%, transparent 20%);
+    background: none;
     z-index: 1;
 }
 
@@ -878,7 +878,7 @@ section { padding: 140px 10%; }
     .hero-title h1 { font-size: clamp(2.4rem, 5.5vw, 3.5rem); line-height: 1.0; }
 
     .hero-overlay {
-        background: linear-gradient(to top left, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 12%, transparent 20%);
+        background: none;
     }
 }
 
@@ -936,7 +936,7 @@ section { padding: 140px 10%; }
     }
     /* 遮罩：手機版 */
     .hero-overlay {
-        background: linear-gradient(to top left, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 12%, transparent 20%);
+        background: none;
     }
     .hero-brand { bottom: 6%; right: 5%; }
     .hero-brand-uni,
