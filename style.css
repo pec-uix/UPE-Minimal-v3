@@ -55,7 +55,7 @@ nav {
 }
 .logo-container { height: 65px; display: flex; align-items: center; gap: 0.6rem; }
 .logo-img { height: 64px; width: auto; object-fit: contain; display: block; }
-.logo-text { display: flex; flex-direction: column; justify-content: center; gap: 0.15rem; }
+.logo-text { display: flex; flex-direction: column; justify-content: space-between; gap: 0; }
 .logo-zh { font-size: 1.55rem; font-weight: 700; color: #FFFFFF; letter-spacing: 0.22em; line-height: 1.15; white-space: nowrap; font-family: 'Noto Sans TC', sans-serif; }
 .logo-en { font-size: 0.72rem; color: rgba(255,255,255,0.88); letter-spacing: 0.06em; line-height: 1.2; white-space: nowrap; font-family: 'Noto Sans TC', sans-serif; }
 .nav-menu { display: flex; gap: 2rem; font-weight: 700; letter-spacing: 0.5px; }
