@@ -274,7 +274,11 @@ paths.forEach(path => {
 setHighlight('south', 'tainan');
 window.addEventListener('DOMContentLoaded', () => {
     const defaultCard = document.querySelector('.park-card.active');
-    if(defaultCard) { updateDetailView(defaultCard); centerActiveCard(defaultCard); }
+    if(defaultCard) {
+        updateDetailView(defaultCard);
+        // 延遲一幀確保 CSS layout 完成後再置中
+        requestAnimationFrame(() => centerActiveCard(defaultCard));
+    }
 
     document.querySelectorAll('.img-nav').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -307,6 +311,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     setHighlight(closestCard.getAttribute('data-region'), closestCard.getAttribute('data-city'));
                     currentDetailName = '';
                     updateDetailView(closestCard);
+                    centerActiveCard(closestCard);
                 }
             }, 150);
         }, { passive: true });
