@@ -44,31 +44,31 @@ const parkData = {
         en: "Taoyuan Aerotropolis Logistics Park",
         land: "25,000", build: "68,000",
         desc: "座落桃園航空城產專區，鄰近機場捷運坑口站，並串聯國際機場及未來國一甲線。",
-        img: ["images/桃園航空城物流園區.png", "images/園區3D圖及空拍圖-桃園航空城物流園區.png", "images/園區3D圖及空拍圖-桃園航空城物流園區4.png"]
+        img: ["images/桃園航空城物流園區.png"]
     },
     "桃園楊梅民豐物流園區": {
         en: "Taoyuan Yangmei Minfeng Logistics Park",
         land: "7,000", build: "20,000",
         desc: "位於桃園楊梅，快速串聯國道1號楊梅交流道。",
-        img: ["images/桃園楊梅民豐物流園區.png", "images/園區3D圖及空拍圖- 桃園楊梅民豐物流園區.png", "images/園區3D圖及空拍圖- 桃園楊梅民豐物流園區7.png", "images/園區3D圖及空拍圖- 桃園楊梅民豐物流園區9.jpg"]
+        img: ["images/桃園楊梅民豐物流園區.png"]
     },
     "桃園U-PARK智匯產業園區": {
         en: "Taoyuan Intelligence Synergy Industrial Park",
         land: "33,000", build: "68,000",
         desc: "位處桃園產業聚落核心，快速連接國道1號/2號交通路網，鄰近青埔與航空城發展圈。",
-        img: ["images/桃園 U-PARK 智匯產業園區.png", "images/園區3D圖及空拍圖-桃園U-PARK智匯產業園區8.png"]
+        img: ["images/桃園 U-PARK 智匯產業園區.png"]
     },
     "台中港物流園區": {
         en: "Taichung Port Logistics Park",
         land: "28,000", build: "44,000",
         desc: "位處台中港核心物流專區，鄰近台中港港區及西濱快速道路。",
-        img: ["images/台中港物流園區.png", "images/園區3D圖及空拍圖- 台中港物流園區10.jpg", "images/園區3D圖及空拍圖- 台中港物流園區11.jpg", "images/園區3D圖及空拍圖- 台中港物流園區12.jpg", "images/園區3D圖及空拍圖- 台中港物流園區13.jpg"]
+        img: ["images/台中港物流園區.png"]
     },
     "新市物流園區": {
         en: "Xinshi Logistics Park",
         land: "26,000", build: "47,000",
         desc: "座落樹谷園區，距南部科學園區 10分鐘車程，並可快速串聯國道8號新市交流道。",
-        img: getImages("新市")
+        img: ["images/園區3D圖及空拍圖- 新市物流園區  .png"]
     }
 };
 
