@@ -167,11 +167,11 @@ section { padding: 140px 10%; }
     z-index: 0;
 }
 
-/* 漸層遮罩：左側暗 */
+/* 漸層遮罩：右下暗（品牌文字區） */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 40%, transparent 65%);
+    background: linear-gradient(to top left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 35%, transparent 55%);
     z-index: 1;
 }
 
@@ -626,6 +626,12 @@ section { padding: 140px 10%; }
 .stat-card .label { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 .stat-card .value { font-size: 2.2rem; font-weight: 900; color: var(--text-main); font-family: 'Noto Sans TC', sans-serif; }
 .stat-card:last-child .value { color: var(--accent-orange); }
+.detail-desc {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
 
 .detail-image-col {
     border-radius: 12px; overflow: hidden;
@@ -785,9 +791,9 @@ section { padding: 140px 10%; }
         margin-bottom: 60px;
     }
     .editorial-01 .editorial-text,
-    .editorial-01 .editorial-image,
-    .editorial-02 .editorial-text,
-    .editorial-02 .editorial-image { order: unset; }
+    .editorial-01 .editorial-image { order: unset; }
+    .editorial-02 .editorial-text { order: 1; }
+    .editorial-02 .editorial-image { order: 2; }
     .editorial-text h2 { font-size: 2.2rem; }
     #about { padding: 80px 6%; }
 
@@ -935,7 +941,9 @@ section { padding: 140px 10%; }
     }
     /* 遮罩：手機版 */
     .hero-overlay {
-        background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 40%, transparent 65%);
+        background:
+            linear-gradient(to bottom, rgba(5,15,40,0.65) 0%, transparent 40%),
+            linear-gradient(to top left, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 40%, transparent 65%);
     }
     .hero-brand { bottom: 6%; right: 5%; }
     .hero-brand-uni,
