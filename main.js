@@ -336,8 +336,10 @@ if (navToggle && navMenu) {
 function centerActiveCard(card) {
     const list = document.querySelector('.location-list');
     if (!list || !card) return;
-    const cardLeft = card.offsetLeft - list.offsetLeft;
-    list.scrollTo({ left: cardLeft - (list.clientWidth - card.offsetWidth) / 2, behavior: 'smooth' });
+    const listRect = list.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const scrollLeft = list.scrollLeft + cardRect.left - listRect.left - (list.clientWidth - cardRect.width) / 2;
+    list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
 }
 
 // ── 切換園區 ──
