@@ -903,7 +903,7 @@ section { padding: 140px 10%; }
     .logo-en { font-size: 0.72rem; letter-spacing: 0.05em; line-height: 1; }
 
     /* Hero */
-    .hero { height: 60vw; max-height: 600px; min-height: 400px; overflow: hidden; }
+    .hero { height: 500px; min-height: 500px; max-height: 500px; overflow: hidden; }
     .hero-bg {
         position: absolute;
         inset: 0;
@@ -942,9 +942,9 @@ section { padding: 140px 10%; }
 
     /* ── Hero mobile (481px–768px 基準) ── */
     .hero {
-        height: 70vw;
-        min-height: 360px;
-        max-height: 520px;
+        height: 420px;
+        min-height: 420px;
+        max-height: 420px;
         overflow: hidden;
         background-color: #1B2E4B;
     }
@@ -1040,7 +1040,7 @@ section { padding: 140px 10%; }
     }
 
     /* 詳細面板圖片：高度改用 aspect-ratio 自適應 */
-    .detail-image-col { height: auto; aspect-ratio: 16/9; }
+    .detail-image-col { height: 220px; min-height: 220px; }
     .detail-stats-container { gap: 1.5rem; flex-wrap: wrap; }
     .stat-card .value { font-size: 1.6rem; }
 
@@ -1080,9 +1080,9 @@ section { padding: 140px 10%; }
     .logo-en { font-size: 0.58rem; line-height: 1; }
 
     .hero {
-        height: 85vw;
-        min-height: 320px;
-        max-height: 480px;
+        height: 360px;
+        min-height: 360px;
+        max-height: 360px;
         overflow: hidden;
     }
     .hero-title {
