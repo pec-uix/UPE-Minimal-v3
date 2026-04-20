@@ -801,8 +801,8 @@ section { padding: 140px 10%; }
     }
     .map-wrapper { order: 1; width: 100%; align-items: center; }
     #taiwan-svg { max-width: 220px; }
+    .location-list-wrapper { width: 100%; order: 2; }
     .location-list {
-        order: 2;
         flex: 1;
         min-width: 0;
         display: flex;
@@ -876,8 +876,8 @@ section { padding: 140px 10%; }
         align-items: center;
     }
     #taiwan-svg { max-width: 200px; }
+    .location-list-wrapper { width: 100%; order: 2; }
     .location-list {
-        order: 2;
         flex: 1;
         min-width: 0;
         display: flex;
@@ -1048,15 +1048,15 @@ section { padding: 140px 10%; }
     #locations { padding: 60px 5%; }
     #locations h2 { font-size: 1.8rem !important; margin-bottom: 1.5rem !important; }
 
-    /* 手機：一次顯示一張卡片的 carousel，scroll-snap-align: center 置中
-       container ≈ 90vw，card = 82vw → 兩側各 4vw padding 讓首尾卡片也能置中 */
+    /* 手機：一次顯示一張卡片的 carousel，scroll-snap-align: center 置中 */
+    .location-list-wrapper { width: 100%; order: 2; }
     .location-list {
-        padding-left: 4vw;
-        padding-right: 4vw;
+        padding-left: 0;
+        padding-right: 0;
     }
     .location-list .park-card {
-        min-width: 82vw;
-        max-width: 82vw;
+        min-width: 78vw;
+        max-width: 78vw;
         scroll-snap-align: center;
     }
 
