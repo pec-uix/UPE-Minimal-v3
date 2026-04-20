@@ -200,6 +200,9 @@ function updateDetailView(card) {
         detailBuild.innerText = data.build;
         if (detailDesc) detailDesc.innerText = data.desc || '';
         renderDots(data.img.length);
+        // 只有一張圖片時隱藏左右箭頭
+        const imageNav = document.querySelector('.image-nav');
+        if (imageNav) imageNav.style.display = data.img.length > 1 ? '' : 'none';
         showImageByIndex(0);
         startAutoPlay();
         detailSection.classList.add('active-detail');
