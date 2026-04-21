@@ -153,14 +153,17 @@ section { padding: 140px 10%; }
     position: relative;
     width: 100%;
     padding: 0; /* 覆蓋全域 section { padding: 140px 10% }，避免左右白邊 */
+    aspect-ratio: 1706 / 960; /* 圖片原始比例，確保 hero 高度與圖片一致，無多餘空白 */
+    overflow: hidden;
 }
 
-/* 滿版背景圖：讓圖片自然撐開 hero，不裁切上方 */
+/* 滿版背景圖：絕對定位填滿 hero，object-fit:cover 不裁切（圖已 16:9） */
 .hero-bg {
-    position: relative;
-    display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     z-index: 0;
 }
 
@@ -925,10 +928,6 @@ section { padding: 140px 10%; }
 
     /* Hero */
     .hero { overflow: hidden; }
-    .hero-bg {
-        position: relative;
-        width: 100%; height: auto;
-    }
     .hero-title {
         top: 28%;
         transform: none;
@@ -961,12 +960,6 @@ section { padding: 140px 10%; }
     /* ── Hero mobile (481px–768px 基準) ── */
     .hero {
         overflow: hidden;
-        background-color: #1B2E4B;
-    }
-    .hero-bg {
-        position: relative;
-        width: 100%; height: auto;
-        display: block;
     }
     .hero-title {
         top: 15%;
