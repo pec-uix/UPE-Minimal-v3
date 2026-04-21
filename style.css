@@ -960,9 +960,6 @@ section { padding: 140px 10%; }
 
     /* ── Hero mobile (481px–768px 基準) ── */
     .hero {
-        height: 420px;
-        min-height: 420px;
-        max-height: 420px;
         overflow: hidden;
         background-color: #1B2E4B;
     }
@@ -1091,9 +1088,6 @@ section { padding: 140px 10%; }
     .logo-en { font-size: 0.58rem; line-height: 1; }
 
     .hero {
-        height: 360px;
-        min-height: 360px;
-        max-height: 360px;
         overflow: hidden;
     }
     .hero-title {
