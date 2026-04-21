@@ -164,7 +164,7 @@ section { padding: 140px 10%; }
     inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     z-index: 0;
 }
 
@@ -934,7 +934,7 @@ section { padding: 140px 10%; }
         inset: 0;
         width: 100%; height: 100%;
         object-fit: cover;
-        object-position: center center;
+        object-position: center top;
     }
     .hero-title {
         top: 28%;
@@ -980,7 +980,7 @@ section { padding: 140px 10%; }
         height: 100%;
         display: block;
         object-fit: cover;
-        object-position: center center;
+        object-position: center top;
     }
     .hero-title {
         top: 15%;
