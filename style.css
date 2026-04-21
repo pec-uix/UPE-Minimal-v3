@@ -29,6 +29,7 @@ body {
 main {
     width: 100%;
     overflow-x: hidden;
+    padding-top: 70px; /* offset for fixed nav */
 }
 
 /* ── Custom Cursor ── */
@@ -155,7 +156,6 @@ section { padding: 140px 10%; }
     min-height: 530px;
     overflow: hidden;
     padding: 0; /* 覆蓋全域 section { padding: 140px 10% }，避免左右白邊 */
-    margin-top: 70px; /* 讓 hero 不被 fixed nav 遮住 */
 }
 
 /* 滿版背景圖 */
@@ -795,7 +795,7 @@ section { padding: 140px 10%; }
     nav { position: fixed; top: 0; width: 100%; }
 
     /* Hero 固定高度，不隨視窗壓縮 */
-    .hero { height: 490px; min-height: 490px; max-height: 490px; overflow: hidden; margin-top: 70px; }
+    .hero { height: 490px; min-height: 490px; max-height: 490px; overflow: hidden; }
     .hero-title h1 { font-size: clamp(2.8rem, 5vw, 3.8rem); }
 
     /* Locations：改為直排（同平板），防止三欄過擠 */
@@ -928,7 +928,7 @@ section { padding: 140px 10%; }
     .logo-en { font-size: 0.72rem; letter-spacing: 0.05em; line-height: 1; }
 
     /* Hero */
-    .hero { height: 430px; min-height: 430px; max-height: 430px; overflow: hidden; margin-top: 70px; }
+    .hero { height: 430px; min-height: 430px; max-height: 430px; overflow: hidden; }
     .hero-bg {
         position: absolute;
         inset: 0;
